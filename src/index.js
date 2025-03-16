@@ -12,7 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const listItem = document.createElement("li");
       listItem.textContent = taskTest;
 
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "x";
+      deleteButton.style.marginLeft = "10px";
+      deleteButton.style.cursor = "pointer";
+
+      deleteButton.addEventListener("click", () => {
+        listItem.remove();
+      });
+
+      listItem.appendChild(deleteButton);
       taskList.appendChild(listItem);
+
       inputField.value = "";
     }
   });
